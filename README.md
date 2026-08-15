@@ -1,5 +1,9 @@
 # perfect-form — stop a long AI session when form breaks, not when energy runs out
 
+<p align="center">
+  <img src="assets/perfect-form-set.svg" width="640" alt="The set ends where form breaks, not where energy runs out">
+</p>
+
 **1** A [Claude Code](https://docs.anthropic.com) skill for long autonomous sessions: work continues to exhaustion, but never at the cost of form. When form breaks, the set ends with a clean handover — not cheat reps that become repair debt later.
 
 **1.1** Borrowed from strength training: reps with perfect form until you cannot do another with perfect form, then stop. Extra reps bought by breaking form produce injury, not progress.
