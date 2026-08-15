@@ -1,0 +1,57 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="640" height="250" viewBox="0 0 640 250" font-family="'Cascadia Code','Consolas',monospace">
+  <rect width="640" height="250" rx="12" fill="#0E0D13"/>
+  <rect x="0" y="0" width="640" height="34" rx="12" fill="#14131C"/>
+  <circle cx="20" cy="17" r="5" fill="#F4645D"/>
+  <circle cx="38" cy="17" r="5" fill="#F9BD4F"/>
+  <circle cx="56" cy="17" r="5" fill="#3FC84F"/>
+  <text x="320" y="22" text-anchor="middle" fill="#8B8798" font-size="12">perfect-form — the set ends when form breaks</text>
+
+  <!-- axes -->
+  <line x1="60" y1="170" x2="600" y2="170" stroke="#2A2838" stroke-width="1"/>
+  <text x="60" y="188" fill="#5C5870" font-size="9.5">session start</text>
+  <text x="600" y="188" text-anchor="end" fill="#5C5870" font-size="9.5">exhaustion</text>
+  <text x="30" y="70" fill="#5C5870" font-size="9.5">form</text>
+
+  <!-- form curve: holds, then degrades -->
+  <path d="M60 74 L 210 74 L 330 76 L 420 82 L 480 104 L 540 138 L 600 162"
+        fill="none" stroke="#2A2838" stroke-width="1.5" stroke-dasharray="3 3"/>
+  <path d="M60 74 L 210 74 L 330 76 L 420 82" fill="none" stroke="#8FD6BD" stroke-width="2">
+    <animate attributeName="stroke-dasharray" values="0 500;500 0" keyTimes="0;0.42" dur="12s" repeatCount="indefinite"/>
+  </path>
+
+  <!-- clean reps -->
+  <g>
+    <circle cx="120" cy="74" r="4" fill="#8FD6BD"><animate attributeName="opacity" values="0;1;1" keyTimes="0;0.10;1" dur="12s" repeatCount="indefinite"/></circle>
+    <circle cx="210" cy="74" r="4" fill="#8FD6BD"><animate attributeName="opacity" values="0;0;1;1" keyTimes="0;0.16;0.20;1" dur="12s" repeatCount="indefinite"/></circle>
+    <circle cx="300" cy="75" r="4" fill="#8FD6BD"><animate attributeName="opacity" values="0;0;1;1" keyTimes="0;0.24;0.28;1" dur="12s" repeatCount="indefinite"/></circle>
+    <circle cx="390" cy="80" r="4" fill="#8FD6BD"><animate attributeName="opacity" values="0;0;1;1" keyTimes="0;0.32;0.36;1" dur="12s" repeatCount="indefinite"/></circle>
+  </g>
+
+  <!-- the break point -->
+  <line x1="440" y1="56" x2="440" y2="176" stroke="#E8B562" stroke-width="1.4" stroke-dasharray="4 3">
+    <animate attributeName="opacity" values="0;0;1;1" keyTimes="0;0.44;0.50;1" dur="12s" repeatCount="indefinite"/>
+  </line>
+  <text x="446" y="52" fill="#E8B562" font-size="10.5">form breaks here
+    <animate attributeName="opacity" values="0;0;1;1" keyTimes="0;0.48;0.54;1" dur="12s" repeatCount="indefinite"/>
+  </text>
+
+  <!-- what most systems do -->
+  <g>
+    <circle cx="490" cy="106" r="4" fill="#D97777"><animate attributeName="opacity" values="0;0;1;1" keyTimes="0;0.56;0.60;1" dur="12s" repeatCount="indefinite"/></circle>
+    <circle cx="545" cy="140" r="4" fill="#D97777"><animate attributeName="opacity" values="0;0;1;1" keyTimes="0;0.62;0.66;1" dur="12s" repeatCount="indefinite"/></circle>
+    <circle cx="595" cy="162" r="4" fill="#D97777"><animate attributeName="opacity" values="0;0;1;1" keyTimes="0;0.68;0.72;1" dur="12s" repeatCount="indefinite"/></circle>
+    <text x="560" y="126" text-anchor="middle" fill="#D97777" font-size="10">cheat reps
+      <animate attributeName="opacity" values="0;0;1;1" keyTimes="0;0.70;0.76;1" dur="12s" repeatCount="indefinite"/>
+    </text>
+  </g>
+
+  <!-- the rule -->
+  <text x="60" y="212" fill="#7FA8E0" font-size="11">RULE</text>
+  <text x="112" y="212" fill="#E9E7F0" font-size="11">the set ends at the break, not at exhaustion
+    <animate attributeName="opacity" values="0;0;1;1" keyTimes="0;0.78;0.84;1" dur="12s" repeatCount="indefinite"/>
+  </text>
+  <text x="60" y="232" fill="#7FA8E0" font-size="11">THEN</text>
+  <text x="112" y="232" fill="#8FD6BD" font-size="11">write a clean handover while you still can
+    <animate attributeName="opacity" values="0;0;1;1" keyTimes="0;0.86;0.92;1" dur="12s" repeatCount="indefinite"/>
+  </text>
+</svg>
