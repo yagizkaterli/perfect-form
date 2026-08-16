@@ -1,57 +1,106 @@
-<svg xmlns="http://www.w3.org/2000/svg" width="640" height="250" viewBox="0 0 640 250" font-family="'Cascadia Code','Consolas',monospace">
-  <rect width="640" height="250" rx="12" fill="#0E0D13"/>
-  <rect x="0" y="0" width="640" height="34" rx="12" fill="#14131C"/>
-  <circle cx="20" cy="17" r="5" fill="#F4645D"/>
-  <circle cx="38" cy="17" r="5" fill="#F9BD4F"/>
-  <circle cx="56" cy="17" r="5" fill="#3FC84F"/>
-  <text x="320" y="22" text-anchor="middle" fill="#8B8798" font-size="12">perfect-form — the set ends when form breaks</text>
+<svg xmlns="http://www.w3.org/2000/svg" width="640" height="248" viewBox="0 0 640 248" font-family="'Cascadia Code','Consolas',ui-monospace,monospace">
+  <!-- RE-katalog: kilitliSureler [120,140,150,180,260,420,620] · canonicalEase cubic-bezier(.22,1,.36,1)
+       siniflar: ciz (kontur cizilir -- surec ilerliyor, genlik 8400) · belir · yaklas -->
+  <rect width="640" height="248" rx="12" fill="#0E0D13"/>
+  <rect x="0" y="0" width="640" height="32" rx="12" fill="#14131C"/>
+  <rect x="0" y="20" width="640" height="12" fill="#14131C"/>
+  <circle cx="20" cy="16" r="4.5" fill="#F4645D"/>
+  <circle cx="37" cy="16" r="4.5" fill="#F9BD4F"/>
+  <circle cx="54" cy="16" r="4.5" fill="#3FC84F"/>
+  <text x="320" y="21" text-anchor="middle" fill="#8B8798" font-size="11.5">perfect-form — the set ends at the break</text>
 
-  <!-- axes -->
-  <line x1="60" y1="170" x2="600" y2="170" stroke="#2A2838" stroke-width="1"/>
-  <text x="60" y="188" fill="#5C5870" font-size="9.5">session start</text>
-  <text x="600" y="188" text-anchor="end" fill="#5C5870" font-size="9.5">exhaustion</text>
-  <text x="30" y="70" fill="#5C5870" font-size="9.5">form</text>
+  <!-- baseline -->
+  <line x1="56" y1="168" x2="596" y2="168" stroke="#22202E" stroke-width="1"/>
+  <text x="56" y="184" fill="#4E4A5E" font-size="8.5">session start</text>
+  <text x="596" y="184" text-anchor="end" fill="#4E4A5E" font-size="8.5">exhaustion</text>
+  <text x="38" y="72" fill="#4E4A5E" font-size="8.5" transform="rotate(-90 38 72)">form</text>
 
-  <!-- form curve: holds, then degrades -->
-  <path d="M60 74 L 210 74 L 330 76 L 420 82 L 480 104 L 540 138 L 600 162"
-        fill="none" stroke="#2A2838" stroke-width="1.5" stroke-dasharray="3 3"/>
-  <path d="M60 74 L 210 74 L 330 76 L 420 82" fill="none" stroke="#8FD6BD" stroke-width="2">
-    <animate attributeName="stroke-dasharray" values="0 500;500 0" keyTimes="0;0.42" dur="12s" repeatCount="indefinite"/>
+  <!-- ghost of the whole curve -->
+  <path d="M56 72 L 200 72 L 316 74 L 404 80 L 462 104 L 528 140 L 596 162"
+        fill="none" stroke="#1D1B29" stroke-width="1.4"/>
+
+  <!-- clean segment: ciz sinifi, 620ms draw on canonicalEase -->
+  <path d="M56 72 L 200 72 L 316 74 L 404 80"
+        fill="none" stroke="#8FD6BD" stroke-width="2" stroke-linecap="round"
+        stroke-dasharray="360" stroke-dashoffset="360">
+    <animate attributeName="stroke-dashoffset" values="360;0" dur="620ms" begin="0.4s;9.4s" fill="freeze"
+             calcMode="spline" keySplines=".22 1 .36 1"/>
+    <animate attributeName="stroke-dashoffset" values="360" dur="1ms" begin="9.0s;18.0s" fill="freeze"/>
   </path>
 
-  <!-- clean reps -->
+  <!-- clean reps: belir, 140ms each -->
   <g>
-    <circle cx="120" cy="74" r="4" fill="#8FD6BD"><animate attributeName="opacity" values="0;1;1" keyTimes="0;0.10;1" dur="12s" repeatCount="indefinite"/></circle>
-    <circle cx="210" cy="74" r="4" fill="#8FD6BD"><animate attributeName="opacity" values="0;0;1;1" keyTimes="0;0.16;0.20;1" dur="12s" repeatCount="indefinite"/></circle>
-    <circle cx="300" cy="75" r="4" fill="#8FD6BD"><animate attributeName="opacity" values="0;0;1;1" keyTimes="0;0.24;0.28;1" dur="12s" repeatCount="indefinite"/></circle>
-    <circle cx="390" cy="80" r="4" fill="#8FD6BD"><animate attributeName="opacity" values="0;0;1;1" keyTimes="0;0.32;0.36;1" dur="12s" repeatCount="indefinite"/></circle>
+    <circle cx="112" cy="72" r="3.4" fill="#8FD6BD" opacity="0">
+      <animate attributeName="opacity" values="0;1" dur="140ms" begin="0.62s;9.62s" fill="freeze"/>
+      <animate attributeName="opacity" values="1;0" dur="1ms" begin="9.0s;18.0s" fill="freeze"/>
+    </circle>
+    <circle cx="200" cy="72" r="3.4" fill="#8FD6BD" opacity="0">
+      <animate attributeName="opacity" values="0;1" dur="140ms" begin="0.76s;9.76s" fill="freeze"/>
+      <animate attributeName="opacity" values="1;0" dur="1ms" begin="9.0s;18.0s" fill="freeze"/>
+    </circle>
+    <circle cx="288" cy="73" r="3.4" fill="#8FD6BD" opacity="0">
+      <animate attributeName="opacity" values="0;1" dur="140ms" begin="0.90s;9.90s" fill="freeze"/>
+      <animate attributeName="opacity" values="1;0" dur="1ms" begin="9.0s;18.0s" fill="freeze"/>
+    </circle>
+    <circle cx="380" cy="78" r="3.4" fill="#8FD6BD" opacity="0">
+      <animate attributeName="opacity" values="0;1" dur="140ms" begin="1.04s;9.04s" fill="freeze"/>
+      <animate attributeName="opacity" values="1;0" dur="1ms" begin="9.0s;18.0s" fill="freeze"/>
+    </circle>
   </g>
 
-  <!-- the break point -->
-  <line x1="440" y1="56" x2="440" y2="176" stroke="#E8B562" stroke-width="1.4" stroke-dasharray="4 3">
-    <animate attributeName="opacity" values="0;0;1;1" keyTimes="0;0.44;0.50;1" dur="12s" repeatCount="indefinite"/>
-  </line>
-  <text x="446" y="52" fill="#E8B562" font-size="10.5">form breaks here
-    <animate attributeName="opacity" values="0;0;1;1" keyTimes="0;0.48;0.54;1" dur="12s" repeatCount="indefinite"/>
-  </text>
+  <!-- the break: yaklas sinifi, 260ms -->
+  <g opacity="0">
+    <line x1="424" y1="54" x2="424" y2="174" stroke="#E8B562" stroke-width="1.3" stroke-dasharray="3 3"/>
+    <text x="432" y="52" fill="#E8B562" font-size="9.5">form breaks here</text>
+    <animate attributeName="opacity" values="0;1" dur="260ms" begin="1.5s;10.5s" fill="freeze"
+             calcMode="spline" keySplines=".22 1 .36 1"/>
+    <animate attributeName="opacity" values="1;0" dur="1ms" begin="9.0s;18.0s" fill="freeze"/>
+  </g>
 
-  <!-- what most systems do -->
+  <!-- what most systems do after the break: cheat reps, degrading -->
+  <path d="M404 80 L 462 104 L 528 140 L 596 162"
+        fill="none" stroke="#D97777" stroke-width="1.6" stroke-linecap="round" stroke-opacity="0.55"
+        stroke-dasharray="230" stroke-dashoffset="230">
+    <animate attributeName="stroke-dashoffset" values="230;0" dur="620ms" begin="1.9s;10.9s" fill="freeze"
+             calcMode="spline" keySplines=".22 1 .36 1"/>
+    <animate attributeName="stroke-dashoffset" values="230" dur="1ms" begin="9.0s;18.0s" fill="freeze"/>
+  </path>
   <g>
-    <circle cx="490" cy="106" r="4" fill="#D97777"><animate attributeName="opacity" values="0;0;1;1" keyTimes="0;0.56;0.60;1" dur="12s" repeatCount="indefinite"/></circle>
-    <circle cx="545" cy="140" r="4" fill="#D97777"><animate attributeName="opacity" values="0;0;1;1" keyTimes="0;0.62;0.66;1" dur="12s" repeatCount="indefinite"/></circle>
-    <circle cx="595" cy="162" r="4" fill="#D97777"><animate attributeName="opacity" values="0;0;1;1" keyTimes="0;0.68;0.72;1" dur="12s" repeatCount="indefinite"/></circle>
-    <text x="560" y="126" text-anchor="middle" fill="#D97777" font-size="10">cheat reps
-      <animate attributeName="opacity" values="0;0;1;1" keyTimes="0;0.70;0.76;1" dur="12s" repeatCount="indefinite"/>
+    <circle cx="462" cy="104" r="3.4" fill="#D97777" opacity="0">
+      <animate attributeName="opacity" values="0;1" dur="140ms" begin="2.1s;11.1s" fill="freeze"/>
+      <animate attributeName="opacity" values="1;0" dur="1ms" begin="9.0s;18.0s" fill="freeze"/>
+    </circle>
+    <circle cx="528" cy="140" r="3.4" fill="#D97777" opacity="0">
+      <animate attributeName="opacity" values="0;1" dur="140ms" begin="2.28s;11.28s" fill="freeze"/>
+      <animate attributeName="opacity" values="1;0" dur="1ms" begin="9.0s;18.0s" fill="freeze"/>
+    </circle>
+    <circle cx="590" cy="161" r="3.4" fill="#D97777" opacity="0">
+      <animate attributeName="opacity" values="0;1" dur="140ms" begin="2.46s;11.46s" fill="freeze"/>
+      <animate attributeName="opacity" values="1;0" dur="1ms" begin="9.0s;18.0s" fill="freeze"/>
+    </circle>
+    <text x="536" y="126" text-anchor="middle" fill="#D97777" font-size="9" opacity="0">cheat reps
+      <animate attributeName="opacity" values="0;1" dur="180ms" begin="2.6s;11.6s" fill="freeze"/>
+      <animate attributeName="opacity" values="1;0" dur="1ms" begin="9.0s;18.0s" fill="freeze"/>
     </text>
   </g>
 
-  <!-- the rule -->
-  <text x="60" y="212" fill="#7FA8E0" font-size="11">RULE</text>
-  <text x="112" y="212" fill="#E9E7F0" font-size="11">the set ends at the break, not at exhaustion
-    <animate attributeName="opacity" values="0;0;1;1" keyTimes="0;0.78;0.84;1" dur="12s" repeatCount="indefinite"/>
-  </text>
-  <text x="60" y="232" fill="#7FA8E0" font-size="11">THEN</text>
-  <text x="112" y="232" fill="#8FD6BD" font-size="11">write a clean handover while you still can
-    <animate attributeName="opacity" values="0;0;1;1" keyTimes="0;0.86;0.92;1" dur="12s" repeatCount="indefinite"/>
-  </text>
+  <!-- the rule: gel-otur, 180ms -->
+  <g font-size="10.5">
+    <g opacity="0" transform="translate(0,5)">
+      <text x="56" y="208" fill="#7FA8E0">RULE</text>
+      <text x="104" y="208" fill="#D8D5E4">the set ends at the break, not at exhaustion</text>
+      <animate attributeName="opacity" values="0;1" dur="180ms" begin="3.0s;12.0s" fill="freeze"/>
+      <animateTransform attributeName="transform" type="translate" values="0 5;0 0" dur="180ms" begin="3.0s;12.0s" fill="freeze"
+                        calcMode="spline" keySplines=".22 1 .36 1"/>
+      <animate attributeName="opacity" values="1;0" dur="1ms" begin="9.0s;18.0s" fill="freeze"/>
+    </g>
+    <g opacity="0" transform="translate(0,5)">
+      <text x="56" y="228" fill="#7FA8E0">THEN</text>
+      <text x="104" y="228" fill="#8FD6BD">write a clean handover while you still can</text>
+      <animate attributeName="opacity" values="0;1" dur="180ms" begin="3.2s;12.2s" fill="freeze"/>
+      <animateTransform attributeName="transform" type="translate" values="0 5;0 0" dur="180ms" begin="3.2s;12.2s" fill="freeze"
+                        calcMode="spline" keySplines=".22 1 .36 1"/>
+      <animate attributeName="opacity" values="1;0" dur="1ms" begin="9.0s;18.0s" fill="freeze"/>
+    </g>
+  </g>
 </svg>
