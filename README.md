@@ -12,6 +12,8 @@
 
 **2** Why: long sessions rarely fail by stopping too early. They fail by continuing with degraded form while output still flows. This skill was written after a session where discipline broke five times and **every break was caught by the human, not the system** — each a rule with nothing enforcing it.
 
+## Install
+
 **3** How to run
 
 ```
